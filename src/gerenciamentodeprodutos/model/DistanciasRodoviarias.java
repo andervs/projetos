@@ -33,9 +33,9 @@ public class DistanciasRodoviarias {
     }
 
     public int distanciaEntreAsCidades(String cidade1, String cidade2) {
+
         String c1 = cidade1;
         String c2 = cidade2;
-
         int distancia = 0;
 
         String juncao1 = c1 + c2;
@@ -53,12 +53,35 @@ public class DistanciasRodoviarias {
         return distancia;
     }
 
+    public int ureMaisProxima(String cidadeOrigem) {
+
+        String c = cidadeOrigem;
+        int menorDistancia = 0;
+
+        c = c.toUpperCase().replaceAll("\\s+", "");
+
+        for (EnumDistanciasRodoviarias dr : EnumDistanciasRodoviarias.values()) {
+            if (menorDistancia == 0) {
+                menorDistancia = dr.getDistancia();
+            }
+            if (dr.name().contains(c)) {
+                if (dr.getDistancia() < menorDistancia) {
+                    menorDistancia = dr.getDistancia();
+                }
+            }
+        }
+        return menorDistancia;
+    }
+
     public static void main(String[] args) {
-        String cidadeOrigem = "Belo Horizonte";
-        String cidadeDestino = "Recife";
-        DistanciasRodoviarias gdp = new DistanciasRodoviarias();
-        int distancia;
-        distancia = gdp.distanciaEntreAsCidades(cidadeOrigem, cidadeDestino);
-        System.out.println(distancia);
+
+        /*
+         String cidadeOrigem = "Belo Horizonte";
+         String cidadeDestino = "Recife";
+         DistanciasRodoviarias gdp = new DistanciasRodoviarias();
+         int distancia;
+         distancia = gdp.distanciaEntreAsCidades(cidadeOrigem, cidadeDestino);
+         System.out.println(distancia);
+         */
     }
 }
