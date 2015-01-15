@@ -52,14 +52,12 @@ public class Produto {
         produtos = produto.consumirArquivoProdutos();
 
         for (String prod : produtos) {
-            if (prod.contains(nomeProduto)) {
+            if (prod.toUpperCase().contains(nomeProduto.toUpperCase())) {
                 dadosProduto = prod.split(":");
-                //System.out.println(dadosProduto[1].substring(3));
                 String SeparadorDecimalAmericano = dadosProduto[1].substring(3).replace(",", ".");
                 preco = new BigDecimal(SeparadorDecimalAmericano);
             }
         }
-        //produtos.
         return preco;
     }
 }

@@ -26,8 +26,7 @@ public class GerenciamentoDeProdutos {
         BigDecimal precoProduto = BigDecimal.ZERO;
 
         Produto produto = new Produto();
-        precoProduto = produto.getValueFromFile("Refrigerante");
-
+        precoProduto = produto.getValueFromFile("refrigerante");
         System.out.println(precoProduto);
     }
 
