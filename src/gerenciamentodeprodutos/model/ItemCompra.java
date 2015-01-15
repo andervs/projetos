@@ -6,14 +6,19 @@ package gerenciamentodeprodutos.model;
 
 public class ItemCompra {
 
-    public int idItemCompra;
-    public ProdutoLoja idProdutoLoja;
+    //public int idItemCompra;
+    //public ProdutoLoja idProdutoLoja;
+    public String descricao;
     public int quantidade;
-    public Compra compra;
-    public ProdutoLoja produtoLoja;
+    public double preco;
+    //public Compra compra;
+    //public ProdutoLoja produtoLoja;
 
-    public ItemCompra() {
-        super();
+    public ItemCompra(int idItemCompra, String descricao, int quantidade, double preco) {
+        //super();
+        //this.idItemCompra = idItemCompra;
+        this.descricao = descricao;
+        this.quantidade = quantidade;
+        this.preco = preco;
     }
-
 }
