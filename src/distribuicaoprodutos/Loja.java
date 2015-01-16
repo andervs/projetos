@@ -54,7 +54,7 @@ public class Loja {
     /* Metodo estatico para gerar as lojas, ja que nao foi disponibilizado 
     uma entrada em .txt */
     public static ArrayList<Loja> initLojas(){
-        ArrayList<Loja> temp = new ArrayList<Loja>();
+        ArrayList<Loja> temp = new ArrayList<>();
         temp.add(new Loja(1,"Norte","Manaus"));
         temp.add(new Loja(2,"Sul","Curitiba"));
         temp.add(new Loja(3,"Sudeste","Belo Horizonte"));
