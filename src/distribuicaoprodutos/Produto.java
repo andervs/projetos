@@ -22,6 +22,15 @@ import java.util.ArrayList;
   * @author            Fabiano
   */
 
+/**
+ * Informacoes completas sobre os produtos
+ * @param id codigo identificador do produto
+ * @param nome Campo para inserir a descrição do produto
+ * @param valor Campo para inserção do valor final em reais
+ * @author Ismael
+ * @author Anderson
+ * @author Fabiano
+ */
 public class Produto {
 
     private int id;
@@ -29,6 +38,12 @@ public class Produto {
     private String nome;
     private BigDecimal valor;
     
+    /**
+     *
+     * @param id
+     * @param estoque
+     * @param nome
+     */
     public Produto(int id, int estoque, String nome){
         this.id = id;
         this.estoque = estoque;
@@ -36,30 +51,59 @@ public class Produto {
         this.valor = getValueFromFile(nome);
     }
 
+    /**
+     *
+     * @return
+     */
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @param id
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getEstoque() {
         return estoque;
     }
 
+    /**
+     *
+     * @param estoque
+     */
     public void setEstoque(int estoque) {
         this.estoque = estoque;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNome() {
         return nome;
     }
 
+    /**
+     *
+     * @param nome
+     */
     public void setNome(String nome) {
         this.nome = nome;
     }
     
+    /**
+     *
+     * @param nome
+     * @return
+     */
     public static BigDecimal getValueFromFile(String nome){
         String path = "/Users/Ismael/Desktop/produtos.txt";
         try{
