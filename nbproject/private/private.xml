@@ -4,8 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/Ismael/NetBeansProjects/DistribuicaoProdutos/src/distribuicaoprodutos/Produto.java</file>
-            <file>file:/Users/Ismael/NetBeansProjects/DistribuicaoProdutos/src/distribuicaoprodutos/Ure.java</file>
+            <file>file:/Users/Ismael/NetBeansProjects/DistribuicaoProdutos/src/distribuicaoprodutos/Fornecedor.java</file>
+            <file>file:/Users/Ismael/NetBeansProjects/DistribuicaoProdutos/src/distribuicaoprodutos/Compra.java</file>
             <file>file:/Users/Ismael/NetBeansProjects/DistribuicaoProdutos/src/distribuicaoprodutos/Application.java</file>
+            <file>file:/Users/Ismael/NetBeansProjects/DistribuicaoProdutos/src/distribuicaoprodutos/ProdutoCompra.java</file>
             <file>file:/Users/Ismael/NetBeansProjects/DistribuicaoProdutos/src/distribuicaoprodutos/Loja.java</file>
         </group>
     </open-files>

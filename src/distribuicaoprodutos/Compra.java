@@ -28,7 +28,7 @@ public class Compra {
     public void setLoja(Loja loja) {
         this.loja = loja;
     }
-    
+   
     public Compra(){
         produtos = new ArrayList<ProdutoCompra>();
     }

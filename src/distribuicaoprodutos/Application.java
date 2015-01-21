@@ -24,6 +24,28 @@ public class Application {
           ArrayList<Ure> ures = Ure.initUre();
           ArrayList<Compra> compras = new ArrayList<Compra>();
           getComprasFromFile(lojas,compras);
+          
+          for (Compra temp_compra:compras){
+              
+              System.out.println("Processando a compra do estabelecimento " +temp_compra.getLoja().getMunicipio()+" e do cliente "+temp_compra.getCliente());
+              
+              ArrayList<ProdutoCompra> produtos = temp_compra.getProdutos();
+              
+              for (ProdutoCompra temp_produto:produtos){
+                  
+                  if (temp_produto.getProduto().getEstoque() - temp_produto.getQuantidade() >= 0){
+                      //Produto tem estoque, realizar a atualizacao do estoque
+                  }
+                  else{
+                      temp_compra.getLoja().REALIZAR_REPOSICAO(PARAMETRO PRODUTO)
+                      //Produto nao tem estoque, iniciar reposicao e depois realiazar a atulizacao do estoque
+                  }
+              
+              }
+              
+              
+              
+          }
 
     }
     
