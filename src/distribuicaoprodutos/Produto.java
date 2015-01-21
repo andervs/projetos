@@ -10,11 +10,18 @@ import java.io.File;
 import java.io.FileReader;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-
 /**
- *
- * @author Ismael
- */
+  * Informacoes completas sobre os produtos
+  * 
+  * @param id codigo identificador do produto
+  * @param estoque  Identifica a quantidade em estoque
+  * @param nome Campo para inserir a descrição do produto
+  * @param valor Campo para inserção do valor final em reais
+  * @author            Ismael
+  * @author            Anderson
+  * @author            Fabiano
+  */
+
 public class Produto {
 
     private int id;
@@ -72,7 +79,12 @@ public class Produto {
         }
         return new BigDecimal("0");
     }
-    
+   
+         /**
+  * Inicializa os produtos por Loja
+  * 
+  * @return temo em initProdutosLoja seta os produtos atrelados as Lojas na inicialização do programa.
+  */
     public static ArrayList<Produto> initProdutosLoja(){
          ArrayList<Produto> temp = new ArrayList<Produto>();        
          temp.add(new Produto(1,1000,"Refrigerante"));
@@ -89,6 +101,12 @@ public class Produto {
          return temp;
     }  
     
+         /**
+  * Inicializa os produtos por Loja
+  * 
+  * @return temp em initProdutosUre seta os produtos atrelados as URES na inicialização do programa.
+  */
+
     public static ArrayList<Produto> initProdutosUre(){
          ArrayList<Produto> temp = new ArrayList<Produto>();        
          temp.add(new Produto(1,5000,"Refrigerante"));
@@ -104,14 +122,24 @@ public class Produto {
          temp.add(new Produto(11,5000,"Shampoo"));
          return temp;
     } 
-    
+
+         /**
+  * Inicializa os produtos por Loja
+  * 
+  * @return temp em initProdutosFornecedorBebida seta os produtos atrelados aos Fornecedores específicos de bebidas.
+  */
       public static ArrayList<Produto> initProdutosFornecedorBebida() {
         ArrayList<Produto> temp = new ArrayList<>();
         temp.add(new Produto(1, 0, "Refrigerante"));
         temp.add(new Produto(2, 0, "Suco"));
         return temp;
     }
-
+       /**
+  * Inicializa os produtos por Loja
+  * 
+  * @return temp em initProdutosFornecedorMercearia seta os produtos atrelados aos Fornecedores específicos de Mercearia.
+  */
+  
     public static ArrayList<Produto> initProdutosFornecedorMercearia() {
         ArrayList<Produto> temp = new ArrayList<>();
         temp.add(new Produto(3, 0, "Arroz"));
@@ -121,6 +149,12 @@ public class Produto {
         return temp;
     }
 
+           /**
+  * Inicializa os produtos por Loja
+  * 
+  * @return temp em initProdutosFornecedorLimpeza seta os produtos atrelados aos Fornecedores específicos de material de limpeza.
+  */
+  
     public static ArrayList<Produto> initProdutosFornecedorLimpeza() {
         ArrayList<Produto> temp = new ArrayList<>();
         temp.add(new Produto(7, 0, "Sabao"));
@@ -128,6 +162,12 @@ public class Produto {
         return temp;
     }
 
+           /**
+  * Inicializa os produtos por Loja
+  * 
+  * @return temp em initProdutosFornecedorHigiene seta os produtos atrelados aos Fornecedores específicos de materiais de higiene.
+  */
+   
     public static ArrayList<Produto> initProdutosFornecedorHigiene() {
         ArrayList<Produto> temp = new ArrayList<>();
         temp.add(new Produto(9, 0, "Sabonente"));

@@ -12,12 +12,21 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
- *
- * @author Ismael
- */
+  * Inicializa Lojas e UREs.
+  * 
+  * @author            Ismael
+  * @author            Anderson
+  * @author            Fabiano
+  */
+ 
 public class Application {
   
-
+/**
+  * Inicializa Lojas e UREs.
+  * 
+  * @param Loja ArrayList com as lojas, chama método initLojas
+  * @param URE  ArrayList que inicializa as UREs através do método initUre
+*/
     public static void main(String[] args) {
         
           ArrayList<Loja> lojas = Loja.initLojas();
@@ -26,8 +35,14 @@ public class Application {
           getComprasFromFile(lojas,compras);
 
     }
-    
-    
+
+    /**
+  * Receber Arquivo de Compras, que é compras.txt, onde estao setadas as compras.
+  * 
+  * @return true ou false para validações de exitencia e quantidade nas compras de uma loja especifica
+  * 
+*/
+   
       public static boolean getComprasFromFile(ArrayList<Loja> lojas, ArrayList<Compra> compras){
           
         Compra temp_compra = null;
