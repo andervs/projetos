@@ -12,47 +12,54 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
-  * Inicializa Lojas e UREs.
+ * Inicializa Lojas e UREs. <<<<<<< HEAD
  *
-  * @author            Ismael
-  * @author            Anderson
-  * @author            Fabiano
+ * @author Ismael
+ * @author Anderson
+ * @author Fabiano
  */
- 
 public class Application {
 
-/**
-  * Inicializa Lojas e UREs.
-  * 
-  * @param Loja ArrayList com as lojas, chama método initLojas
-  * @param URE  ArrayList que inicializa as UREs através do método initUre
-*/
+    /**
+     * Inicializa Lojas e UREs.
+     *
+     * @param Loja ArrayList com as lojas, chama método initLojas
+     * @param URE ArrayList que inicializa as UREs através do método initUre
+     */
     public static void main(String[] args) {
 
         ArrayList<Loja> lojas = Loja.initLojas();
         ArrayList<Ure> ures = Ure.initUre();
         ArrayList<Fornecedor> fornecedores = Fornecedor.initFornecedores();
         ArrayList<Compra> compras = new ArrayList<Compra>();
-          getComprasFromFile(lojas,compras);
+        getComprasFromFile(lojas, compras);
 
         for (Compra temp_compra : compras) {
 
-    /**
+            /**
+             * Receber Arquivo de Compras, que é compras.txt, onde estao setadas
+             * as compras.
+             *
+             * @return true ou false para validações de exitencia e quantidade
+             * nas compras de uma loja especifica
+             *
+             */
+            System.out.println(temp_compra.getLoja().getProdutos().get;
+            System.out.println(temp_produto.getQuantidade());
+        }
+    }
+}
+
+public static boolean getComprasFromFile(ArrayList<Loja> lojas, ArrayList<Compra> compras) {
+
+=======
+ /**
   * Receber Arquivo de Compras, que é compras.txt, onde estao setadas as compras.
   * 
   * @return true ou false para validações de exitencia e quantidade nas compras de uma loja especifica
   * 
-                        */
-                
-                System.out.println(temp_compra.getLoja().getProdutos().get;
-                System.out.println(temp_produto.getQuantidade());
-            }
-        }
-    }
-
-    public static boolean getComprasFromFile(ArrayList<Loja> lojas, ArrayList<Compra> compras) {
-
-        Compra temp_compra = null;
+  */
+  Compra temp_compra = null;
         Loja temp_loja = null;
         //String path = "/Users/Ismael/Desktop/compras.txt";
         String path = "/home/anderson/Downloads/compras.txt";

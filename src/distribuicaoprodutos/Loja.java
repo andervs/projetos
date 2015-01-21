@@ -7,9 +7,9 @@ package distribuicaoprodutos;
 
 import java.util.ArrayList;
 
-/**
+ /**
   * Permite listar e verificar as informacoes das lojas inseridas no sistema
- *
+  *
   * @param id codigo identificador
   * @param regiaoGeografica  Identifica a regiao geografica a qual pertence a loja
   * @param municipio Permite atrela a loja o municipio ao qual pertence
@@ -17,7 +17,7 @@ import java.util.ArrayList;
   * @author            Ismael
   * @author            Anderson
   * @author            Fabiano
- */
+  */
 public class Loja {
 
     private int id;
@@ -61,9 +61,8 @@ public class Loja {
     }
 
     /* Metodo estatico para gerar as lojas, ja que nao foi disponibilizado 
-     uma entrada em .txt */
-   
-      /**
+       uma entrada em .txt */
+     /**
   * @return temp em initLojas Metodo estatico para gerar as lojas, ja que nao foi disponibilizado uma entrada em .txt 
   */
  
@@ -77,7 +76,7 @@ public class Loja {
         return temp;
     }
 
-    /**
+ /**
   * @return temp_produto em buscaProduto para efetuar a pesquisa pelo produto 
   */
     

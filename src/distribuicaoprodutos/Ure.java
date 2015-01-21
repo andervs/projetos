@@ -7,9 +7,9 @@ package distribuicaoprodutos;
 
 import java.util.ArrayList;
 
-/**
+ /**
   * Informacoes completas sobre as URE´s
- *
+  * 
   * @param id codigo identificador da URE
   * @param regiaoGeografica  Identifica a regiao Geografica a qual pertence a URE
   * @param municipio Identifica o municipio ao qual pertence a URE
@@ -17,7 +17,8 @@ import java.util.ArrayList;
   * @author            Ismael
   * @author            Anderson
   * @author            Fabiano
- */
+  */
+
 public class Ure {
     private int id;
     private String regiaoGeografica;
