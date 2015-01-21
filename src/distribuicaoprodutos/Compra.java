@@ -5,10 +5,6 @@
  */
 package distribuicaoprodutos;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 /**
