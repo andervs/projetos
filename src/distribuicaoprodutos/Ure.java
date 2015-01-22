@@ -31,6 +31,59 @@ public class Ure {
         this.municipio = municipio;
         this.produtos = Produto.initProdutosUre();
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getRegiaoGeografica() {
+        return regiaoGeografica;
+    }
+
+    public void setRegiaoGeografica(String regiaoGeografica) {
+        this.regiaoGeografica = regiaoGeografica;
+    }
+
+    public String getMunicipio() {
+        return municipio;
+    }
+
+    public void setMunicipio(String municipio) {
+        this.municipio = municipio;
+    }
+
+    public ArrayList<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(ArrayList<Produto> produtos) {
+        this.produtos = produtos;
+    }
+    
+    public boolean transferirEstoque(Produto produto, int quantidade, ArrayList<Fornecedor> fornecedores){
+        for (Produto ure_produto:produtos){
+            if(ure_produto.getNome().equals(produto.getNome())){
+                if (ure_produto.getEstoque() >= 1000+quantidade ){
+                    ure_produto.baixarEstoque(1000+quantidade);
+                    produto.entradaEstoque(1000+quantidade);
+                    
+                    if(ure_produto.getEstoque()==0){
+                        //URE teve seu estoque zerado apos repor loja
+                        //executar rotina de reposicao URE - QUANTIDADE P
+                    }
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
     
   /**
   * Inicializa as URE´s

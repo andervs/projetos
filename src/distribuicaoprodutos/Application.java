@@ -32,6 +32,7 @@ public class Application {
           ArrayList<Ure> ures = Ure.initUre();
           ArrayList<Compra> compras = new ArrayList<Compra>();
           getComprasFromFile(lojas,compras);
+          ArrayList<Fornecedor> fornecedores = Fornecedor.initFornecedores();
           
           for (Compra temp_compra:compras){
               
@@ -41,45 +42,22 @@ public class Application {
               
               for (ProdutoCompra temp_produto:produtos){
                   
-                  if (temp_produto.getProduto().getEstoque() - temp_produto.getQuantidade() >= 0){
-                      //Produto tem estoque, realizar a atualizacao do estoque
+                  if (!(temp_produto.getProduto().getEstoque() - temp_produto.getQuantidade() >   0)){
+                      temp_compra.getLoja().solicitarReposicao(temp_produto,ures,fornecedores);
                   }
-                  else{
-                      temp_compra.getLoja().REALIZAR_REPOSICAO(PARAMETRO PRODUTO)
-                      //Produto nao tem estoque, iniciar reposicao e depois realiazar a atulizacao do estoque
-                  }
-              
+                  
+                  temp_produto.getProduto().baixarEstoque(temp_produto.getQuantidade());
+                  
               }
               
               
               
           }
 
-        ArrayList<Loja> lojas = Loja.initLojas();
-        ArrayList<Ure> ures = Ure.initUre();
-        ArrayList<Fornecedor> fornecedores = Fornecedor.initFornecedores();
-        ArrayList<Compra> compras = new ArrayList<Compra>();
-        getComprasFromFile(lojas, compras);
-
-        for (Compra temp_compra : compras) {
-
-            /**
-             * Receber Arquivo de Compras, que é compras.txt, onde estao setadas
-             * as compras.
-             *
-             * @return true ou false para validações de exitencia e quantidade
-             * nas compras de uma loja especifica
-             *
-             */
-            System.out.println(temp_compra.getLoja().getProdutos().get;
-            System.out.println(temp_produto.getQuantidade());
-        }
     }
-}
+
 
 public static boolean getComprasFromFile(ArrayList<Loja> lojas, ArrayList<Compra> compras) {
-
-=======
  /**
   * Receber Arquivo de Compras, que é compras.txt, onde estao setadas as compras.
   * 

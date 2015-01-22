@@ -32,6 +32,20 @@ public class Loja {
         this.produtos = Produto.initProdutosLoja();
     }
 
+    public void solicitarReposicao(ProdutoCompra temp_produto,  ArrayList<Ure> ures,  ArrayList<Fornecedor> fornecedores){
+        Ure nextUre=null;
+        for (Ure temp_ure:ures){
+            if (temp_ure.getMunicipio().equals(this.municipio)){
+                    nextUre=temp_ure;
+                    break;
+            }
+        }
+        if (!nextUre.transferirEstoque(temp_produto.getProduto(), temp_produto.getQuantidade(), fornecedores) ){
+            //URE Regional Nao tem Estoque para finalizar essa venda - Iniciar rotina de buscar URE/Fornecedor
+        }
+    }
+    
+    
     public int getId() {
         return id;
     }

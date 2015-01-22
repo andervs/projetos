@@ -20,7 +20,7 @@ public class Compra {
     public Loja getLoja() {
         return loja;
     }
-
+    
     public void setLoja(Loja loja) {
         this.loja = loja;
     }

@@ -43,6 +43,13 @@ public class Produto {
         this.valor = getValueFromFile(nome);
     }
 
+    public void baixarEstoque(int quantidade){
+        this.estoque = this.estoque - quantidade;
+    }
+    
+    public void entradaEstoque(int quantidade){
+        this.estoque = this.estoque + quantidade;
+    }
     /**
      *
      * @return
@@ -131,28 +138,6 @@ public class Produto {
         temp.add(new Produto(11, 1000, "Shampoo"));
         return temp;
     }
-
-   
-  /**
-  * Inicializa os produtos por Loja
-  * 
-  * @return temo em initProdutosLoja seta os produtos atrelados as Lojas na inicialização do programa.
-  */
-    public static ArrayList<Produto> initProdutosLoja(){
-         ArrayList<Produto> temp = new ArrayList<Produto>();        
-         temp.add(new Produto(1,1000,"Refrigerante"));
-         temp.add(new Produto(2,1000,"Suco"));
-         temp.add(new Produto(3,1000,"Arroz"));
-         temp.add(new Produto(4,1000,"Feijao"));
-         temp.add(new Produto(5,1000,"Fuba"));
-         temp.add(new Produto(6,1000,"Oleo"));
-         temp.add(new Produto(7,1000,"Sabao"));
-         temp.add(new Produto(8,1000,"Detergente"));
-         temp.add(new Produto(9,1000,"Sabonete"));
-         temp.add(new Produto(10,1000,"Creme Dental"));
-         temp.add(new Produto(11,1000,"Shampoo"));
-         return temp;
-    }  
     
   /**
   * Inicializa os produtos por Loja
@@ -175,28 +160,6 @@ public class Produto {
         temp.add(new Produto(11, 5000, "Shampoo"));
         return temp;
     }
-
-  /**
-  * Inicializa os produtos por Loja
-  * 
-  * @return temp em initProdutosFornecedorBebida seta os produtos atrelados aos Fornecedores específicos de bebidas.
-  */
-    public static ArrayList<Produto> initProdutosFornecedorBebida() {
-
-         ArrayList<Produto> temp = new ArrayList<Produto>();        
-         temp.add(new Produto(1,5000,"Refrigerante"));
-         temp.add(new Produto(2,5000,"Suco"));
-         temp.add(new Produto(3,5000,"Arroz"));
-         temp.add(new Produto(4,5000,"Feijao"));
-         temp.add(new Produto(5,5000,"Fuba"));
-         temp.add(new Produto(6,5000,"Oleo"));
-         temp.add(new Produto(7,5000,"Sabao"));
-         temp.add(new Produto(8,5000,"Detergente"));
-         temp.add(new Produto(9,5000,"Sabonete"));
-         temp.add(new Produto(10,5000,"Creme Dental"));
-         temp.add(new Produto(11,5000,"Shampoo"));
-         return temp;
-    } 
 
   /**
   * Inicializa os produtos por Loja
