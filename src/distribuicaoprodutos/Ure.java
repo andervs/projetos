@@ -5,6 +5,9 @@
  */
 package distribuicaoprodutos;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 
  /**
@@ -24,12 +27,25 @@ public class Ure {
     private String regiaoGeografica;
     private String municipio;
     private ArrayList<Produto> produtos;
+    private boolean status;
+
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
     
      public Ure(int id, String regiaoGeografica, String municipio){
         this.id = id;
         this.regiaoGeografica = regiaoGeografica;
         this.municipio = municipio;
         this.produtos = Produto.initProdutosUre();
+        if (municipio.equals("Manaus"))
+            this.status = false;
+        else
+            this.status = true;
     }
 
     public int getId() {
@@ -99,5 +115,34 @@ public class Ure {
         temp.add(new Ure(4,"Nordeste","Recife"));
         temp.add(new Ure(5,"Centro-Oeste","Goiania"));
         return temp;
+    }
+    public Produto buscaProduto(String nome){
+        for (Produto temp_produto:this.produtos){
+            if (temp_produto.getNome().equals(nome)){
+                return temp_produto;
+            }
+        }
+        return null;
+    }
+    
+    public int getDistanciaFromFile(String temp_ure_name){
+          String path = "/Users/Ismael/Desktop/distancias.txt";
+          try {
+            File f = new File(path);
+            if (f.exists()) {
+                BufferedReader br = new BufferedReader(new FileReader(path));
+                for (String line; (line = br.readLine()) != null;){
+                    System.out.println(line);
+                    if(line.contains(temp_ure_name) && line.contains(this.getMunicipio())){
+                        System.out.println(line.split(":")[1]);
+                        return Integer.parseInt(line.split(":")[1]);
+                    }
+                }
+                }
+            }
+            catch(Exception e){
+                    return 0;
+            }
+          return 0;
     }
 }

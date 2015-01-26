@@ -32,26 +32,20 @@ public class Application {
           ArrayList<Ure> ures = Ure.initUre();
           ArrayList<Compra> compras = new ArrayList<Compra>();
           getComprasFromFile(lojas,compras);
-          ArrayList<Fornecedor> fornecedores = Fornecedor.initFornecedores();
+          ArrayList<Fornecedor> fornecedores = Fornecedor.initFornecedores();          
           
-          for (Compra temp_compra:compras){
-              
-              System.out.println("Processando a compra do estabelecimento " +temp_compra.getLoja().getMunicipio()+" e do cliente "+temp_compra.getCliente());
-              
-              ArrayList<ProdutoCompra> produtos = temp_compra.getProdutos();
-              
-              for (ProdutoCompra temp_produto:produtos){
-                  
+          for (Compra temp_compra:compras){              
+              System.out.println("[APP] Processando a compra do estabelecimento " +temp_compra.getLoja().getMunicipio()+" e do cliente "+temp_compra.getCliente());              
+              ArrayList<ProdutoCompra> produtos = temp_compra.getProdutos();              
+              for (ProdutoCompra temp_produto:produtos){                  
                   if (!(temp_produto.getProduto().getEstoque() - temp_produto.getQuantidade() >   0)){
+                      System.out.println("[APP] Loja "+temp_compra.getLoja().getMunicipio()+
+                              " não tem quantidade suficiente do produto "+
+                              temp_produto.getProduto().getNome()+ " para realizar a venda");                      
                       temp_compra.getLoja().solicitarReposicao(temp_produto,ures,fornecedores);
-                  }
-                  
-                  temp_produto.getProduto().baixarEstoque(temp_produto.getQuantidade());
-                  
-              }
-              
-              
-              
+                  }                  
+                  temp_produto.getProduto().baixarEstoque(temp_produto.getQuantidade());                  
+              }                                          
           }
 
     }
@@ -66,15 +60,17 @@ public static boolean getComprasFromFile(ArrayList<Loja> lojas, ArrayList<Compra
   */
   Compra temp_compra = null;
         Loja temp_loja = null;
-        //String path = "/Users/Ismael/Desktop/compras.txt";
-        String path = "/home/anderson/Downloads/compras.txt";
+        String path = "/Users/Ismael/Desktop/compras.txt";
+        //String path = "/home/anderson/Downloads/compras.txt";
         try {
             File f = new File(path);
             if (f.exists()) {
                 BufferedReader br = new BufferedReader(new FileReader(path));
                 for (String line; (line = br.readLine()) != null;) {
 
-                    if (line.isEmpty() || line.contains("Relação")); else if (line.contains("Loja")) {
+                    if (line.isEmpty() || line.contains("Relação")); 
+                    
+                    else if (line.contains("Loja")) {
                         int temp_id = Integer.parseInt(line.substring(5));
                         for (Loja temp_loja2 : lojas) {
                             if (temp_loja2.getId() == temp_id) {
