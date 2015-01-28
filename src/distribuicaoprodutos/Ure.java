@@ -90,6 +90,8 @@ public class Ure {
                     if(ure_produto.getEstoque()==0){
                         //URE teve seu estoque zerado apos repor loja
                         //executar rotina de reposicao URE - QUANTIDADE P
+                        
+                        //ureRequisitaProdutoUreMaisProxima(produto, quantidade);
                     }
                     return true;
                 }
@@ -98,6 +100,17 @@ public class Ure {
                 }
             }
         }
+        return false;
+    }
+    
+    /**
+     *
+     * @param produto
+     * @param quantidade
+     * @return
+     */
+    public boolean ureRequisitaProdutoUreMaisProxima(Produto produto, int quantidade){
+        
         return false;
     }
     
@@ -126,7 +139,7 @@ public class Ure {
     }
     
     public int getDistanciaFromFile(String temp_ure_name){
-          String path = "/Users/Ismael/Desktop/distancias.txt";
+          String path = "/home/anderson/Dropbox/pos.graduacao.java/atividades/trabalho.Edmar.e.Jairo/parte.do.Jairo/distancias.txt";
           try {
             File f = new File(path);
             if (f.exists()) {

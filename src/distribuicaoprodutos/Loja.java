@@ -104,10 +104,13 @@ public class Loja {
     public static ArrayList<Loja> initLojas(){
         ArrayList<Loja> temp = new ArrayList<Loja>();
         temp.add(new Loja(1, "Norte", "Manaus"));
-        temp.add(new Loja(2, "Sul", "Curitiba"));
-        temp.add(new Loja(3, "Sudeste", "Belo Horizonte"));
-        temp.add(new Loja(4, "Nordeste", "Recife"));
-        temp.add(new Loja(5, "Centro-Oeste", "Goiania"));
+        temp.add(new Loja(2, "Nordeste", "Recife"));
+        temp.add(new Loja(3, "Centro-Oeste", "Goiania"));
+        temp.add(new Loja(4, "Sudeste", "Belo Horizonte"));
+        temp.add(new Loja(5, "Sul", "Curitiba"));
+        
+        
+        
         return temp;
     }
 

@@ -60,16 +60,15 @@ public static boolean getComprasFromFile(ArrayList<Loja> lojas, ArrayList<Compra
   */
   Compra temp_compra = null;
         Loja temp_loja = null;
-        String path = "/Users/Ismael/Desktop/compras.txt";
-        //String path = "/home/anderson/Downloads/compras.txt";
+        String path = "/home/anderson/Dropbox/pos.graduacao.java/atividades/trabalho.Edmar.e.Jairo/parte.do.Jairo/teste.01/compras.txt";
         try {
             File f = new File(path);
             if (f.exists()) {
                 BufferedReader br = new BufferedReader(new FileReader(path));
                 for (String line; (line = br.readLine()) != null;) {
 
-                    if (line.isEmpty() || line.contains("Relação")); 
-                    
+                    if (line.isEmpty() || line.contains("Rela"));
+                                        
                     else if (line.contains("Loja")) {
                         int temp_id = Integer.parseInt(line.substring(5));
                         for (Loja temp_loja2 : lojas) {
